@@ -3,7 +3,7 @@ from time import process_time
 import math
 
 '''This program calculates pi to a user specified number of decimal places
-using the Nilakantha  Series'''
+using the Nilakantha Series'''
 print("How Many decimal places do you want to calculate pi too?")
 number_of_decimal_places = int(input())
 getcontext().prec = number_of_decimal_places

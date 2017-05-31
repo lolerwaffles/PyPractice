@@ -18,7 +18,7 @@ while (pie * 4) != (prev_pie * 4):
     pie += Decimal(((-1.0)**(iterations)) / ((2.0*iterations)+1.0))
     print(pie * 4)
 
-float(error) = Decimal(math.pi) - Decimal(pie)
+error = Decimal(math.pi) - Decimal(pie)
 
 print("Pi calculated to {} decimal places, using {} iterations"\
                     .format(number_of_decimal_places, iterations))
