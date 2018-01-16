@@ -4,7 +4,8 @@ import math
 
 '''This program calculates pi to a user specified number of decimal places
 using the Nilakantha Series'''
-print("How Many decimal places do you want to calculate pi too?")
+print("This program calculates pi to a user specified number of decimal places using the Nilakantha Series")
+print("How any decimal places of pi do you wish to calculate?")
 number_of_decimal_places = int(input())
 getcontext().prec = number_of_decimal_places
 i = 2
