@@ -4,8 +4,7 @@ import math
 
 '''This program calculates pi to a user specified number of decimal places
 using the Bailey-Borwein-Plouffe formula'''
-print("This program calculates pi to a user specified number of decimal places
-using the Bailey-Borwein-Plouffe formula")
+#print("How Many decimal places do you want to calculate pi too?")
 number_of_decimal_places = int(input("How Many decimal places do you want to calculate pi too?"))
 getcontext().prec = number_of_decimal_places
 i = 0
