@@ -1,7 +1,8 @@
 from tkinter import *
+import secrets
 
 class Window(Frame):
-
+    finalSeed = []
     def __init__(self, master=None):
         Frame.__init__(self,master)
         self.master = master
@@ -15,18 +16,30 @@ class Window(Frame):
         file = Menu(menu)
         file.add_command(label="Exit", command=self.client_exit)
         menu.add_cascade(label="File", menu=file)
-        genSeedButton = Button(self, text="Genterate IOTA Seed",command=self.client_exit)
+        genSeedButton = Button(self, text="Genterate IOTA Seed",command=self.generateSeed)
         genSeedButton.place(relx=0.5, rely=0.5, anchor=CENTER)
 
     def showText(self):
         text = Label(self, "IOTASEED")
         text.pack()
+        
 
     def client_exit(self):
         exit()
     def generateSeed(self):
-        exit()
+        charLib= ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","9"]
+        seed = []
+        finalSeed = ""
 
+        for i in range(0,secrets.randbelow(10240)):
+            for i in range(0,secrets.randbelow(1024)):
+                seed.append(secrets.choice(charLib))
+            charLib = seed
+
+        while len(finalSeed) < 81:
+            finalSeed = finalSeed + seed[secrets.randbelow(1024)]
+
+            self.showText(finalSeed)
 
 
 
