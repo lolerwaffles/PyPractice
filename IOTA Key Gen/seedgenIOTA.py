@@ -1,16 +1,15 @@
 import secrets
 charLib= ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","9"]
-initSeed = []
+seed = []
 secondSeedPermutation = []
 tertiarySeedPermutation = []
 finalSeed = ""
-for i in range(0,1048576):
-    initSeed.append(secrets.choice(charLib))
-for i in range(0,1048576):
-    secondSeedPermutation.append(secrets.choice(initSeed))
-for i in range(0,1048576):
-    tertiarySeedPermutation.append(secrets.choice(secondSeedPermutation))
+
+for i in range(0,secrets.randbelow(10240)):
+    for i in range(0,secrets.randbelow(1024)):
+        seed.append(secrets.choice(charLib))
+    charLib = seed
 
 while len(finalSeed) < 81:
-    finalSeed = finalSeed + tertiarySeedPermutation[secrets.randbelow(1048576)]
+    finalSeed = finalSeed + seed[secrets.randbelow(1024)]
 print(finalSeed)
