@@ -18,11 +18,16 @@ class Window(Frame):
         menu.add_cascade(label="File", menu=file)
         genSeedButton = Button(self, text="Genterate IOTA Seed",command=self.generateSeed)
         genSeedButton.place(relx=0.5, rely=0.5, anchor=CENTER)
+        self.showResults = StringVar()
+        frame=Frame(window)
+        frame.pack()
+        oneTicket=Label(frame, textvariable=self.showResults).pack()
+
 
     def showText(self):
         text = Label(self, "IOTASEED")
         text.pack()
-        
+
 
     def client_exit(self):
         exit()
@@ -39,7 +44,9 @@ class Window(Frame):
         while len(finalSeed) < 81:
             finalSeed = finalSeed + seed[secrets.randbelow(1024)]
 
-            self.showText(finalSeed)
+            self.showResults.set(finalSeed)
+
+
 
 
 
