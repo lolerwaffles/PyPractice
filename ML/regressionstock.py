@@ -2,7 +2,7 @@ import pandas as pd
 import quandl
 import math, datetime
 import numpy as np
-from sklearn import preprocessing, cross_validation, svm
+from sklearn import preprocessing, model_selection, svm
 from sklearn.linear_model import LinearRegression
 import matplotlib.pyplot as plt
 from matplotlib import style
@@ -34,7 +34,7 @@ y = np.array(df['label'])
 y = np.array(df['label'])
 
 
-X_train, X_test, y_train, y_test = cross_validation.train_test_split(X, y, test_size=0.2)
+X_train, X_test, y_train, y_test = model_selection.train_test_split(X, y, test_size=0.2)
 
 clf = LinearRegression(n_jobs=-1)
 clf.fit(X_train, y_train)
